@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+
+  <!-- CSS Styling -->
+  <link rel="stylesheet" href="style.css" />
+
+      <!-- TensorFlow.js library -->
+  <script
+      src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest"
+      type="text/javascript"
+    ></script>
+</head>
+  <body>
+    <h1> Aprendizaje por transferencia con MobileNet en TensorFlow.js </h1>
+
+    <section id="app" class="removed">
+      <div id="liveView" class="camView">
+        <video
+          id="webcam"
+          autoplay
+          playsinline
+          muted
+          width="252"
+          height="252"
+        ></video>
+      </div>
+      <div>
+        <button id="webcamButton">Habilitar cámara web</button>
+
+        <button class="dataCollector" data-1hot="0" data-name="Clase 1">
+          Ejemplos para Clase 1
+        </button>
+        <button class="dataCollector" data-1hot="1" data-name="Clase 2">
+          Ejemplos para Clase 2
+        </button>
+        <button id="train">Entrenar el clasificador</button>
+        <button id="predict" disabled>Clasificar!</button>
+      </div>
+      <div>
+        <p id="status"></p>
+      </div>
+    </section>
+
+    <script src="index.js"></script>
+  </body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Tutorial MobileNet</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+
+    <!-- CSS Styling -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- TensorFlow.js library -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest"
+      type="text/javascript"
+    ></script>
+
+    <!-- MobileNet -->
+    <script 
+      src="https://cdn.jsdelivr.net/npm/@tensorflow-models/mobilenet"
+    >
+    </script>
+  </head>
+  <body>
+    <h1>Tutorial MobileNet</h1>
+    <!-- Placeholder div for output or log messages -->
+    <button id="StartModel" disabled>Start Classification</button>
+    <div id="outputMessage">Awaiting TF.js load</div>
+    <img
+      id="img"
+      crossorigin
+      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQDFocChhKixB4Z8_rORxzYUHVZt_8yYGEmD9jIYp8-uOC2EvOPwEcoXYvwjNNbCsuDL-E&usqp=CAU"
+      width="252"
+      height="252"
+    />
+    <script src="index.js"></script>
+  </body>
+</html>

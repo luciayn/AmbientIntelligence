@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Asistencia en cocina con COCO-SSD</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+
+    <!-- CSS Styling -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- TensorFlow.js library -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest"
+      type="text/javascript"
+    ></script>
+
+    <!-- COCO-SSD -->
+    <script 
+      src="https://cdn.jsdelivr.net/npm/@tensorflow-models/coco-ssd"
+    ></script>
+  </head>
+  <body>
+    <h1>Kitchen Assistant with COCO-SSD</h1>
+    <div id="outputMessage">Wait for the COCO-SSD model to load before enabling the webcam and starting object detection</div>
+    <div id="outputMessage1"><br>Elapsed Time</div>
+    <div id="outputMessage2"><br></div>
+    <div id="outputMessage3"><br></div>
+    <div id="history_list">History</div>
+    <section id="app" >
+      <div id="liveView" class="camView">
+        <button id="btnEnableWebcam" disabled>Enable webcam</button>
+        <video id="webcam" autoplay muted width="640" height="480"></video>
+      </div>
+    </section>
+
+    <script src="index.js"></script>
+  </body>
+</html>
