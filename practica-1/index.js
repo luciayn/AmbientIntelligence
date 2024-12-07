@@ -58,7 +58,7 @@ async function predictWebcam() {
     objects.length = 0;
     c_list.length = 0;
     for (let n = 0; n < predictions.length; n++) {
-      // Only process predictions with a confidence score above 66%
+      // Only process predictions with a confidence score above 1%
       if (predictions[n].score > 0.01) {
         // Create a paragraph element to display the class and confidence
         const p = document.createElement("p");
@@ -106,7 +106,20 @@ async function predictWebcam() {
           }
 
           if (c_list.includes("cup") && c_list.includes("laptop")){
-            if ((cup_box[0] > laptop_box[0]-2) || (cup_box[1] > laptop_box[1]-2) || (cup_box[2] > laptop_box[2]-2) || (cup_box[3] > laptop_box[3]-2) || (cup_box[3] > laptop_box[3]-2)) {
+            const proximityThreshold = 50;
+            const cup_right = cup_box[0] + cup_box[2]; // Right side of the cup
+            const cup_left = cup_box[0];              // Left side of the cup
+            const laptop_left = laptop_box[0];         // Left side of the laptop
+            const laptop_right = laptop_box[0] + laptop_box[2]; // Right side of the laptop
+            const cup_bottom = cup_box[1] + cup_box[3]; // Bottom side of the cup
+            const cup_top = cup_box[1];                 // Top side of the cup
+            const laptop_top = laptop_box[1];           // Top side of the laptop
+            const laptop_bottom = laptop_box[1] + laptop_box[3]; // Bottom side of the laptop
+
+            if (Math.abs(cup_right - laptop_left) < proximityThreshold ||
+            Math.abs(laptop_right - cup_left) < proximityThreshold ||
+            Math.abs(cup_bottom - laptop_top) < proximityThreshold ||
+            Math.abs(laptop_bottom - cup_top) < proximityThreshold) {
               outputMessageEl3.innerText = "¡Cuidado! La taza puede verterse sobre el ordenador.";
             }            
           }
@@ -120,12 +133,9 @@ async function predictWebcam() {
           }
           else{
             elapsed_time = (Date.now()-knife_timestamp)/1000;
-            outputMessageEl1.innerText = `${elapsed_time}`;
+            outputMessageEl1.innerText = `Elapsed time: ${elapsed_time}`;
             if (elapsed_time > 60) {
               outputMessageEl1.innerText = "Recuerda guardar el cuchillo después de usarlo."
-            }
-            else{
-              //outputMessageEl1.innerText = "\n"
             }
           }
         }
