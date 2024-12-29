@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Asistente inteligente para el transporte público</title>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+
+  <!-- CSS Styling -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- TensorFlow.js library -->
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest" type="text/javascript"></script>
+</head>
+
+<body>
+  <h1>Asistente inteligente para el transporte público</h1>
+
+  <section>
+
+    <div class="ui-div">
+      <button class="ui-btn" id="btnCreateAndTrain">Create and Train</button>
+      <button class="ui-btn" id="btnLoadModel">Load Model</button>
+      <button class="ui-btn" id="btnTestModel">Test Model</button>
+    </div>
+    <div class="ui-div">
+      <button class="ui-btn" id="btnMicStart">Start Mic.</button>
+      <button class="ui-btn" id="btnMicStop">Stop Mic.</button>
+    </div>
+
+    <div class="ui-div">
+      <audio id="audioPlayer" controls="controls" src=""></audio>
+    </div>   
+
+  </section>
+
+  <section>
+    <h2>Mensajes en Pantalla: </h2>
+    <p id="outputMessage">Answer: </p>
+    <p id="outputMessageES">Respuesta: </p>
+    <p id="outputMessageDE">Antwort: </p>
+  </section>
+
+  <script src="index.js"></script>
+</body>
+
+</html>

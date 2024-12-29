@@ -1,0 +1,23 @@
+/* CSS files add styling rules to your content */
+
+body {
+    font-family: helvetica, arial, sans-serif;
+    margin: 2em;
+  }
+  
+  h1 {
+    font-style: italic;
+    color: #ff6f00;
+  }
+
+  .ui-div {
+    display: flex;
+    padding: 15px;
+  }
+
+  .ui-btn {
+    margin: 4px;
+    min-height: 32px;
+  }
+  
+  
